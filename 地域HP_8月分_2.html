@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3回 認知症予防講座 ｜ 薬剤師が伝えたい認知症予防とお薬の話</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-deep:#155a78;
+    --sky:#1d83a6;
+    --sky-mid:#3ba3c2;
+    --sky-light:#9bd8e6;
+    --aqua-soft:#cdebf1;
+    --bg:#e7f3f2;
+    --card:#ffffff;
+    --sun:#f3b53c;
+    --sun-soft:#ffd97c;
+    --sun-deep:#cf8a1e;
+    --morning:#7d6bce;
+    --stem:#5a9e54;
+    --ink:#173943;
+    --ink-soft:#456069;
+    --line:#cfe4e2;
+    --shadow:0 10px 30px rgba(21,90,120,.14);
+    --shadow-lg:0 18px 50px rgba(21,90,120,.2);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Zen Maru Gothic",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    font-size:19px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .mincho{font-family:"Shippori Mincho B1",serif}
+
+  .bloom{position:absolute;pointer-events:none}
+
+  /* ===== ヒーロー（夏空）===== */
+  header{
+    position:relative;
+    background:
+      radial-gradient(125% 95% at 50% -15%, #7fd2e8 0%, #2f9dc1 44%, var(--sky-deep) 100%);
+    color:#fff;
+    padding:60px 24px 96px;
+    text-align:center;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  header::after{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background-image:
+      radial-gradient(rgba(255,255,255,.5) 1.6px, transparent 1.7px),
+      radial-gradient(rgba(255,255,255,.28) 1.2px, transparent 1.3px);
+    background-size:90px 90px, 54px 54px;
+    background-position:0 0, 26px 30px;
+    opacity:.5;
+  }
+  .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:2}
+  .badge{
+    display:inline-block;
+    font-size:1.05rem;font-weight:700;letter-spacing:.06em;
+    color:var(--sky-deep);
+    background:linear-gradient(180deg,var(--sun-soft),var(--sun));
+    padding:7px 22px;border-radius:999px;
+    box-shadow:0 6px 16px rgba(0,0,0,.18);
+    margin-bottom:20px;
+  }
+  header h1{
+    font-weight:900;
+    font-size:clamp(2.5rem,9vw,4.1rem);
+    line-height:1.18;letter-spacing:.02em;
+    text-shadow:0 3px 0 rgba(15,70,95,.35),0 6px 14px rgba(0,0,0,.18);
+  }
+  header h1 .no{color:var(--sun-soft);display:inline-block}
+  .cohost{
+    margin-top:12px;font-size:clamp(1.05rem,3.6vw,1.4rem);font-weight:700;color:#eaf8fb;
+    text-shadow:0 2px 6px rgba(0,0,0,.18);
+  }
+  .theme-wrap{
+    margin-top:36px;display:inline-flex;flex-direction:column;align-items:center;
+    position:relative;max-width:min(94vw,660px);
+  }
+  .theme-eyebrow{
+    position:relative;z-index:3;
+    font-size:1rem;font-weight:900;letter-spacing:.2em;
+    color:var(--sky-deep);
+    background:linear-gradient(180deg,var(--sun-soft),var(--sun));
+    padding:6px 22px;border-radius:999px;
+    box-shadow:0 5px 12px rgba(0,0,0,.22);
+    margin-bottom:-16px;
+  }
+  .theme{
+    position:relative;z-index:2;
+    font-family:"Shippori Mincho B1",serif;font-weight:700;
+    font-size:clamp(1.6rem,6.2vw,2.75rem);
+    line-height:1.42;letter-spacing:.02em;
+    color:var(--sky-deep);
+    background:linear-gradient(168deg,#fffef7 0%,#fdeecb 100%);
+    padding:32px 36px 28px;border-radius:24px;
+    border:3px solid var(--sun);
+    box-shadow:0 18px 46px rgba(8,55,76,.34), inset 0 0 0 3px rgba(255,255,255,.65);
+    animation:pop .7s cubic-bezier(.2,.85,.25,1.25) .5s both;
+  }
+  .theme::before{
+    content:"";position:absolute;inset:-18px;z-index:-1;border-radius:34px;
+    background:radial-gradient(closest-side, rgba(255,206,92,.6), rgba(255,206,92,0) 78%);
+    filter:blur(6px);
+  }
+  .theme-br{display:inline}
+  .wave{position:absolute;bottom:-1px;left:0;width:100%;height:46px;z-index:1}
+
+  /* ===== レイアウト共通 ===== */
+  main{max-width:760px;margin:0 auto;padding:0 22px 40px;position:relative}
+  section{margin-top:54px;position:relative}
+  .section-title{
+    display:flex;align-items:center;gap:12px;
+    font-size:clamp(1.45rem,5.5vw,1.9rem);
+    font-weight:900;color:var(--sky-deep);
+    margin-bottom:24px;padding-bottom:14px;
+    border-bottom:3px dotted var(--sky-light);
+  }
+  .section-title .ico{flex:0 0 auto}
+
+  /* ===== ハイライト（2つの内容）===== */
+  .highlights{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;
+    margin-top:-46px;position:relative;z-index:5;
+  }
+  .hl-card{
+    background:var(--card);border-radius:22px;
+    padding:30px 22px 28px;text-align:center;
+    box-shadow:var(--shadow-lg);border:1px solid var(--line);
+    position:relative;overflow:hidden;
+  }
+  .hl-card::before{
+    content:"";position:absolute;top:0;left:0;width:100%;height:7px;
+    background:linear-gradient(90deg,var(--sky-mid),var(--sky));
+  }
+  .hl-card.b::before{background:linear-gradient(90deg,var(--sun),var(--sun-deep))}
+  .hl-num{
+    display:inline-block;font-weight:900;font-size:1rem;
+    color:#fff;background:var(--sky);
+    width:30px;height:30px;line-height:30px;border-radius:50%;margin-bottom:8px;
+  }
+  .hl-card.b .hl-num{background:var(--sun-deep)}
+  .hl-card .circle{
+    width:84px;height:84px;border-radius:50%;margin:2px auto 16px;
+    display:grid;place-items:center;
+    background:radial-gradient(circle at 35% 30%, #eef9fb, var(--aqua-soft));
+    box-shadow:inset 0 -4px 10px rgba(21,90,120,.1);
+  }
+  .hl-card.b .circle{background:radial-gradient(circle at 35% 30%, #fff7e4, var(--sun-soft))}
+  .hl-card h3{font-size:1.3rem;font-weight:900;color:var(--sky-deep);line-height:1.4}
+  .hl-card.b h3{color:var(--sun-deep)}
+
+  /* ===== 開催概要 ===== */
+  .detail{
+    background:var(--card);border-radius:22px;
+    box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden;
+  }
+  .row{display:flex;align-items:flex-start;gap:16px;padding:22px 24px;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .row .ic{
+    flex:0 0 auto;width:50px;height:50px;border-radius:14px;
+    background:linear-gradient(180deg,#e6f5f8,var(--aqua-soft));display:grid;place-items:center;
+  }
+  .row .body{flex:1;min-width:0}
+  .row .label{font-size:.95rem;font-weight:700;color:var(--sky);letter-spacing:.04em}
+  .row .value{font-size:1.25rem;font-weight:700;color:var(--ink);line-height:1.5}
+  .row .note{font-size:.95rem;color:var(--sun-deep);font-weight:700;margin-top:4px}
+  .row .value .big{font-size:1.5rem;color:var(--sky-deep)}
+
+  /* ===== 参加要項 ===== */
+  .reqs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .req{
+    background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:20px 18px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:flex-start;
+  }
+  .req .ic{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:var(--sky);display:grid;place-items:center}
+  .req .label{font-size:.92rem;font-weight:700;color:var(--sky)}
+  .req .value{font-size:1.18rem;font-weight:900;color:var(--ink);line-height:1.45}
+  .req.free{grid-column:1 / -1;background:linear-gradient(180deg,#fff7e1,#fdedc4);border-color:var(--sun-soft)}
+  .req.free .ic{background:var(--sun-deep)}
+  .req.free .value{color:var(--sun-deep)}
+  .req.wide{grid-column:1 / -1}
+
+  /* ===== 地図ボタン ===== */
+  .map-wrap{text-align:center;margin-top:40px}
+  .map-btn{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:inherit;font-size:1.25rem;font-weight:900;color:#fff;text-decoration:none;
+    background:linear-gradient(180deg,var(--sky),var(--sky-deep));
+    padding:18px 34px;border-radius:999px;
+    box-shadow:0 12px 28px rgba(21,90,120,.3);
+    transition:transform .15s ease, box-shadow .15s ease;min-height:56px;
+  }
+  .map-btn:hover,.map-btn:focus-visible{transform:translateY(-3px);box-shadow:0 18px 38px rgba(21,90,120,.38);outline:none}
+  .map-btn:focus-visible{box-shadow:0 0 0 4px var(--sun-soft),0 18px 38px rgba(21,90,120,.38)}
+  .map-cap{margin-top:12px;font-size:1rem;color:var(--ink-soft)}
+
+  /* ===== お問い合わせ ===== */
+  .contact{
+    background:radial-gradient(120% 120% at 50% 0%, #2090b3, var(--sky-deep));
+    color:#fff;border-radius:24px;padding:40px 28px 36px;text-align:center;position:relative;overflow:hidden;
+  }
+  .contact::after{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.5) 1.4px,transparent 1.5px);
+    background-size:60px 60px;opacity:.35;pointer-events:none;
+  }
+  .contact h2{font-size:1.5rem;font-weight:900;margin-bottom:6px;color:var(--sun-soft)}
+  .contact .org{font-size:1.35rem;font-weight:900;margin-top:14px}
+  .contact .tel{font-size:clamp(1.9rem,8vw,2.6rem);font-weight:900;letter-spacing:.04em;margin:6px 0;color:#fff}
+  .contact .dept{font-size:1.12rem;color:#d8eef4}
+  .site-link{
+    display:inline-flex;align-items:center;gap:10px;
+    margin-top:22px;position:relative;z-index:1;
+    font-family:inherit;font-size:1.1rem;font-weight:900;
+    color:var(--sky-deep);text-decoration:none;
+    background:#fff;padding:14px 28px;border-radius:999px;
+    box-shadow:0 8px 20px rgba(0,0,0,.22);min-height:52px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .site-link:hover,.site-link:focus-visible{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.28);outline:none}
+  .site-link:focus-visible{box-shadow:0 0 0 4px var(--sun-soft),0 14px 30px rgba(0,0,0,.28)}
+
+  footer{text-align:center;padding:30px 20px 40px;color:var(--ink-soft);font-size:.92rem;position:relative}
+  footer .deco{margin-bottom:8px;display:flex;justify-content:center;gap:10px;align-items:center}
+
+  /* ===== 動き ===== */
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  @keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes pop{0%{transform:scale(.9)}60%{transform:scale(1.035)}100%{transform:scale(1)}}
+  .reveal{opacity:0;animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.32s}.d4{animation-delay:.46s}
+  .sway{transform-origin:50% 80%;animation:sway 7s ease-in-out infinite}
+  .sway.b{animation-duration:9s;animation-delay:-3s}
+  .turn{animation:spin 60s linear infinite;transform-origin:50% 50%}
+  @media (prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1}.sway,.turn,.theme{animation:none}}
+
+  /* ===== レイアウト分岐（既定＝縦積み・スマホ向け）===== */
+  .layout{margin-top:54px}
+  .layout > section{margin-top:0}
+  .layout > section + section{margin-top:48px}
+
+  /* --- スマホ（〜560px）--- */
+  @media (max-width:560px){
+    body{font-size:18px}
+    .highlights{grid-template-columns:1fr;margin-top:-40px}
+    .reqs{grid-template-columns:1fr}
+    .row{padding:18px 18px}
+    .row .value .big{font-size:1.35rem}
+    .map-btn{width:100%;justify-content:center}
+    .theme-wrap{max-width:95vw}
+    .theme{font-size:1.5rem;padding:26px 20px 22px;line-height:1.5}
+  }
+
+  /* --- PC・タブレット横（880px〜）：横長2カラム --- */
+  @media (min-width:880px){
+    body{font-size:20px}
+    main{max-width:1120px;padding:0 34px 64px}
+    header{padding:84px 24px 128px}
+    .hero-inner{max-width:900px}
+    .highlights{max-width:860px;margin-left:auto;margin-right:auto;gap:30px;margin-top:-52px}
+    .hl-card{padding:40px 28px 34px}
+    .hl-card .circle{width:98px;height:98px}
+    .hl-card h3{font-size:1.55rem}
+    .layout{display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:start}
+    .layout > section + section{margin-top:0}
+    .section-title{font-size:1.75rem}
+    .row{padding:24px 26px}
+    .contact{padding:52px 32px 44px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ ヒーロー ============ -->
+<header>
+  <!-- 向日葵・朝顔の装飾 -->
+  <svg class="bloom sway" style="top:18px;left:14px;width:74px" viewBox="0 0 100 100" aria-hidden="true">
+    <g class="turn" fill="#f3b53c">
+      <ellipse cx="50" cy="22" rx="6.5" ry="19"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(30 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(60 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(90 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(120 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(150 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(180 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(210 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(240 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(270 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(300 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(330 50 50)"/>
+    </g>
+    <circle cx="50" cy="50" r="15" fill="#7a4a20"/><circle cx="50" cy="50" r="9" fill="#5e3717"/>
+  </svg>
+  <svg class="bloom" style="top:96px;right:18px;width:60px;opacity:.95" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="50" cy="50" r="40" fill="#7d6bce"/>
+    <path d="M50 50 50 12 M50 50 86 38 M50 50 72 86 M50 50 28 86 M50 50 14 38" stroke="#6151ad" stroke-width="2.4" fill="none"/>
+    <circle cx="50" cy="50" r="13" fill="#fdf6e3"/>
+  </svg>
+  <svg class="bloom sway b" style="bottom:54px;right:8%;width:54px;opacity:.92" viewBox="0 0 100 100" aria-hidden="true">
+    <g fill="#ffd97c">
+      <ellipse cx="50" cy="22" rx="6.5" ry="19"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(45 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(90 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(135 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(180 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(225 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(270 50 50)"/><ellipse cx="50" cy="22" rx="6.5" ry="19" transform="rotate(315 50 50)"/>
+    </g>
+    <circle cx="50" cy="50" r="14" fill="#7a4a20"/>
+  </svg>
+
+  <div class="hero-inner">
+    <span class="badge reveal d1">西蒲田 1・4・5丁目 共催</span>
+    <h1 class="reveal d2"><span class="no">第3回</span> 認知症予防講座</h1>
+    <div class="theme-wrap reveal d3">
+      <span class="theme-eyebrow">本講座のテーマ</span>
+      <p class="theme mincho">薬剤師が伝えたい<br class="theme-br">認知症予防とお薬の話</p>
+    </div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1440 46" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 C 240 0 480 0 720 22 C 960 44 1200 44 1440 16 L1440 46 L0 46 Z" fill="#e7f3f2"/>
+  </svg>
+</header>
+
+<main>
+
+  <!-- ============ 2つの内容 ============ -->
+  <div class="highlights">
+    <div class="hl-card reveal d2">
+      <span class="hl-num">1</span>
+      <div class="circle">
+        <!-- カプセル -->
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#155a78" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2.5" y="8" width="19" height="8" rx="4" transform="rotate(-45 12 12)"/><path d="M9 9l6 6"/>
+        </svg>
+      </div>
+      <h3>認知症のお薬</h3>
+    </div>
+    <div class="hl-card b reveal d3">
+      <span class="hl-num">2</span>
+      <div class="circle">
+        <!-- 注意したい薬（錠剤＋注意）-->
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#cf8a1e" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="9" cy="9" r="6"/><path d="M5 9h8"/><path d="M18 9v5"/><path d="M18 17.5v.01"/>
+        </svg>
+      </div>
+      <h3>認知症を<br>きたしやすい薬</h3>
+    </div>
+  </div>
+
+  <!-- ===== 開催概要＋参加要項（PCでは横2カラム）===== -->
+  <div class="layout">
+
+  <!-- 開催概要 -->
+  <section>
+    <h2 class="section-title">
+      <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1d83a6" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      開催概要
+    </h2>
+    <div class="detail">
+      <div class="row">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#155a78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg></div>
+        <div class="body">
+          <div class="label">日程</div>
+          <div class="value"><span class="big">8月5日</span>（水）</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#155a78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+        <div class="body">
+          <div class="label">時間</div>
+          <div class="value"><span class="big">10:00 〜 10:40</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#155a78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+        <div class="body">
+          <div class="label">場所</div>
+          <div class="value">牧田リハビリテーション病院<br>別館3階 ラウンジ</div>
+          <div class="note">※ 当日は正面エントランスにお越しください</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#155a78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></div>
+        <div class="body">
+          <div class="label">講師</div>
+          <div class="value">薬剤師　大久保 奈緒</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 参加要項 -->
+  <section>
+    <h2 class="section-title">
+      <svg class="ico" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1d83a6" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      参加要項
+    </h2>
+    <div class="reqs">
+      <div class="req free">
+        <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div><div class="label">参加費</div><div class="value">無料</div></div>
+      </div>
+      <div class="req">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2v6h6"/><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="m9 13 2 2 4-4"/></svg></div>
+        <div><div class="label">申し込み</div><div class="value">不要</div></div>
+      </div>
+      <div class="req">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-1.5"/><path d="M2 2l7.5 7.5"/><path d="M2 2l4 1 1 4"/></svg></div>
+        <div><div class="label">持ち物</div><div class="value">筆記用具</div></div>
+      </div>
+      <div class="req wide">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6"/><path d="M16 6.5a3 3 0 0 1 0 5.5M22 20c0-2.5-1.5-4.7-3.8-5.6"/></svg></div>
+        <div><div class="label">対象</div><div class="value" style="font-size:1.08rem">どなたでもご参加いただけます</div></div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /layout -->
+
+  <!-- ============ 地図ボタン（全幅）============ -->
+  <div class="map-wrap reveal d1">
+    <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=%E7%89%A7%E7%94%B0%E3%83%AA%E3%83%8F%E3%83%93%E3%83%AA%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%97%85%E9%99%A2%20%E3%80%92144-0051%20%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E8%A5%BF%E8%92%B2%E7%94%B04-22-1" target="_blank" rel="noopener">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+      会場までの地図を見る
+    </a>
+    <p class="map-cap">〒144-0051　東京都大田区西蒲田4-22-1<br>タップするとGoogleマップで会場が開きます</p>
+  </div>
+
+  <!-- ============ お問い合わせ ============ -->
+  <section>
+    <div class="contact">
+      <h2>お問い合わせ</h2>
+      <div class="org">牧田リハビリテーション病院</div>
+      <div class="tel">03-5748-5052</div>
+      <div class="dept">リハビリテーション部　小関</div>
+      <a class="site-link" href="https://www.makita-hosp.or.jp/riha/" target="_blank" rel="noopener">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#155a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.7 2.6 4.2 6 4.2 9.5S14.7 18.9 12 21.5C9.3 18.9 7.8 15.5 7.8 12S9.3 5.1 12 2.5Z"/></svg>
+        病院の公式サイトを見る
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="deco">
+    <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><g fill="#f3b53c"><ellipse cx="50" cy="26" rx="7" ry="18"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(45 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(90 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(135 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(180 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(225 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(270 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(315 50 50)"/></g><circle cx="50" cy="50" r="14" fill="#7a4a20"/></svg>
+    <svg width="24" height="24" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="#7d6bce"/><path d="M50 50 50 12 M50 50 86 38 M50 50 72 86 M50 50 28 86 M50 50 14 38" stroke="#6151ad" stroke-width="3" fill="none"/><circle cx="50" cy="50" r="13" fill="#fdf6e3"/></svg>
+    <svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><g fill="#f3b53c"><ellipse cx="50" cy="26" rx="7" ry="18"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(45 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(90 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(135 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(180 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(225 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(270 50 50)"/><ellipse cx="50" cy="26" rx="7" ry="18" transform="rotate(315 50 50)"/></g><circle cx="50" cy="50" r="14" fill="#7a4a20"/></svg>
+  </div>
+  第3回 認知症予防講座 ｜ 西蒲田 1・4・5丁目共催<br>
+  牧田リハビリテーション病院
+</footer>
+
+</body>
+</html>
